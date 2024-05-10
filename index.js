@@ -41,10 +41,10 @@ const answers =inquirer
 //   const svgLogo = generateSVGLogo(questions);
 
   console.log(shapeDetails);
-  writeToFile('./output/logo.svg',shapeDetails); 
-});
-function writeToFile(fileName, data) {
-    fs.writeFile(`?/${fileName}`, data, (err) =>
-    err ? console.log(err) : console.log('Successfully created SVG Logo!')
-  );
-  };
+  fs.writeFile('./output/logo.svg', shapeDetails, (err) => {
+    if (err) {
+        console.error(err);
+        return;
+    }}
+    );
+  })
